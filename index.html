@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marrow | Internal Infrastructure</title>
+    <title>MARROW | Tactical Training for the Venture Core</title>
     <style>
         :root {
-            --bg: #080808;
+            --bg: #070707;
             --surface: #111111;
             --border: #222222;
-            --text: #e1e1e1;
-            --muted: #888888;
+            --text: #e2e2e2;
+            --muted: #666666;
             --accent: #ffffff;
-            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition: 0.3s ease;
         }
 
         body {
@@ -23,158 +23,135 @@
             line-height: 1.6;
         }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
+        .container { max-width: 900px; margin: 0 auto; padding: 2rem; }
 
         header {
-            padding: 3rem 0;
+            padding: 4rem 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-bottom: 1px solid var(--border);
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
         }
 
-        .logo { font-weight: 300; letter-spacing: 0.5em; text-transform: uppercase; font-size: 0.8rem; }
+        .logo { font-weight: 300; letter-spacing: 0.6em; text-transform: uppercase; font-size: 1rem; }
 
         .view-switch {
             display: flex;
             background: var(--surface);
             padding: 4px;
-            border-radius: 20px;
             border: 1px solid var(--border);
+            border-radius: 2px;
         }
 
         .view-btn {
-            padding: 6px 16px;
-            border-radius: 16px;
-            font-size: 0.75rem;
+            padding: 8px 18px;
+            font-size: 0.7rem;
             cursor: pointer;
             border: none;
             background: transparent;
             color: var(--muted);
-            transition: var(--transition);
             text-transform: uppercase;
+            font-weight: 600;
         }
 
         .view-btn.active { background: var(--bg); color: var(--accent); }
 
-        .view-content { display: none; animation: fadeIn 0.5s ease; }
+        .view-content { display: none; animation: fadeIn 0.4s ease; }
         .view-content.active { display: block; }
 
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        /* Typography */
-        h1 { font-size: 2.5rem; font-weight: 400; margin-bottom: 1.5rem; letter-spacing: -0.02em; }
-        h2 { font-size: 1.2rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+        h1 { font-size: 2.8rem; font-weight: 300; margin-bottom: 2rem; line-height: 1.1; color: var(--accent); }
+        h2 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--muted); margin: 4rem 0 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
         
-        /* Founder View Styles */
-        .letter { font-family: 'Georgia', serif; color: #d1d1d1; font-size: 1.1rem; line-height: 1.8; margin-bottom: 5rem; max-width: 650px; }
-        .audit-step { margin-bottom: 3rem; padding-left: 1.5rem; border-left: 1px solid var(--border); }
-        .audit-step h3 { font-size: 1rem; color: var(--accent); margin-bottom: 0.5rem; }
-        .audit-step p { color: var(--muted); font-size: 0.95rem; }
+        .entry-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+        .entry-card { background: var(--surface); padding: 1.5rem; border: 1px solid var(--border); }
+        .entry-card h3 { font-size: 0.85rem; margin-bottom: 1rem; color: var(--accent); text-transform: uppercase; }
+        .entry-card p { font-size: 0.8rem; color: var(--muted); line-height: 1.4; }
 
-        /* VC View Styles */
-        .dashboard { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2rem; }
-        .stat-card { background: var(--surface); padding: 1.5rem; border: 1px solid var(--border); border-radius: 4px; }
-        .stat-label { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; display: block; margin-bottom: 0.5rem; }
-        .stat-value { font-size: 1.5rem; font-weight: 500; color: var(--accent); }
-        .stat-desc { font-size: 0.8rem; color: #555; margin-top: 0.5rem; }
+        .pillar-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 3rem 0; }
+        .pillar h3 { font-size: 1.2rem; margin-bottom: 0.5rem; font-weight: 500; }
+        .pillar p { color: var(--muted); font-size: 0.95rem; }
 
-        .bento-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 3rem 0; }
-        .bento-item { background: var(--surface); padding: 2rem; border: 1px solid var(--border); }
+        .audit-box { border-left: 2px solid var(--border); padding-left: 2rem; margin: 4rem 0; }
 
-        footer { text-align: center; padding: 5rem 0; color: #333; font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; }
+        footer { text-align: center; padding: 5rem 0; color: #222; font-size: 0.7rem; letter-spacing: 0.5em; text-transform: uppercase; }
     </style>
 </head>
 <body>
 
     <div class="container">
         <header>
-            <div class="logo">Marrow</div>
+            <div class="logo">MARROW</div>
             <div class="view-switch">
-                <button class="view-btn active" onclick="switchView('founder')">Founder View</button>
-                <button class="view-btn" onclick="switchView('vc')">Partner View</button>
+                <button class="view-btn active" onclick="switchView('team')">Management Core</button>
+                <button class="view-btn" onclick="switchView('partner')">Partners / PE / VC</button>
             </div>
         </header>
 
-        <div id="founder-view" class="view-content active">
-            <div class="letter">
-                <p>Dear Founder,</p>
-                <p>Leading through chaos isn't a business challenge; it is a biological stress test. At Marrow, we don't believe in heroes. We believe in <strong>Grounded Leaders</strong>—those who have the empathy to see the truth and the tenacity to solve for survival.</p>
-                <p>Our work begins with the <strong>Marrow Audit</strong>: a 30-minute diagnostic to move you from reactive panic to proactive protocol.</p>
+        <div id="team-view" class="view-content active">
+            <h1>Structural Resilience <br>for Radical Inflections.</h1>
+            <p style="font-size: 1.2rem; color: var(--muted); max-width: 650px;">Marrow provides tactical leadership training for the venture core. We drill the protocols that allow Founders and Operators to influence for a common purpose—when the edges are burning.</p>
+
+            <h2>Inflection Point Training</h2>
+            <div class="entry-grid">
+                <div class="entry-card">
+                    <h3>The Capital Shock</h3>
+                    <p>Post-raise. Training leaders to scale influence and maintain empathy as headcount and complexity explode.</p>
+                </div>
+                <div class="entry-card">
+                    <h3>The Acquisition Shift</h3>
+                    <p>Post-PE purchase. Bridging the gap between efficiency mandates and the team's core identity.</p>
+                </div>
+                <div class="entry-card">
+                    <h3>The Survival Pivot</h3>
+                    <p>Downsizing & Reskilling. Tactical protocols for leading the "staying team" through trauma with tenacity.</p>
+                </div>
             </div>
 
-            <h2>The Diagnostic</h2>
-            <div class="audit-step">
-                <h3>1. The Transparency Gap</h3>
-                <p>What is the gap between the internal reality and the Board's perception? We close this through radical honesty.</p>
-            </div>
-            <div class="audit-step">
-                <h3>2. The Singular Signal</h3>
-                <p>What is the one milestone that ensures survival if everything else fails? We strip away the noise.</p>
-            </div>
-            <div class="audit-step">
-                <h3>3. The Oxygen Date</h3>
-                <p>When, exactly, does the cash hit zero? No "hoped-for" revenue. Just physics.</p>
-            </div>
-            <div class="audit-step">
-                <h3>4. Hidden Inventory</h3>
-                <p>What unlisted assets do you actually have? We find the leverage you've overlooked.</p>
-            </div>
-            <div class="audit-step">
-                <h3>5. The Friction Truth</h3>
-                <p>What truth are you afraid to tell your team? We find the courage to communicate the bottleneck.</p>
+            <div class="pillar-grid">
+                <div class="pillar">
+                    <h3>Tactical Empathy</h3>
+                    <p>We train leaders to hear the truth behind the noise—ensuring the team feels seen so they can execute faster.</p>
+                </div>
+                <div class="pillar">
+                    <h3>Mechanical Tenacity</h3>
+                    <p>We provide first-principles frameworks to deconstruct chaos into manageable, physics-based problems.</p>
+                </div>
             </div>
             
         </div>
 
-        <div id="vc-view" class="view-content">
-            <h1>Quantifying Resilience.</h1>
-            <p style="color: var(--muted); margin-bottom: 3rem;">We translate leadership health into a risk-mitigation dashboard. We track the shift from "Chaos" to "Protocol" across your portfolio.</p>
+        <div id="partner-view" class="view-content">
+            <h1>Ensuring Execution Integrity.</h1>
+            <p style="font-size: 1.2rem; color: var(--muted); max-width: 650px;">We are the stealth training layer that secures your most critical assets. We fix the human core that traditional consultancies overlook.</p>
 
-            <h2>The Clarity Dashboard</h2>
-            <div class="dashboard">
-                <div class="stat-card">
-                    <span class="stat-label">Transparency Index</span>
-                    <span class="stat-value">92%</span>
-                    <p class="stat-desc">Alignment between Founder & Board reporting.</p>
+            <h2>Portfolio Assurance</h2>
+            <div class="entry-grid">
+                <div class="entry-card">
+                    <h3>Founder Risk</h3>
+                    <p>Stabilizing the Founder-Operator interlock to prevent leadership fragmentation during rapid scaling.</p>
                 </div>
-                <div class="stat-card">
-                    <span class="stat-label">Decision Velocity</span>
-                    <span class="stat-value">+40%</span>
-                    <p class="stat-desc">Reduction in time-to-action on critical friction.</p>
+                <div class="entry-card">
+                    <h3>Private Equity Efficiency</h3>
+                    <p>Training management teams to absorb transformation mandates without triggering organizational paralysis.</p>
                 </div>
-                <div class="stat-card">
-                    <span class="stat-label">Runway Clarity</span>
-                    <span class="stat-value">Absolute</span>
-                    <p class="stat-desc">Elimination of speculative financial modeling.</p>
+                <div class="entry-card">
+                    <h3>Labor Transformation</h3>
+                    <p>Managing the human variable during radical reskilling or downsizing to protect institutional knowledge.</p>
                 </div>
             </div>
-            
 
-            <h2 style="margin-top: 4rem;">The Marrow Protocol</h2>
-            <div class="bento-grid">
-                <div class="bento-item">
-                    <h3>Empathy Training</h3>
-                    <p style="color: var(--muted);">Building high-trust environments that prevent "A-Player" turnover during pivots.</p>
-                </div>
-                <div class="bento-item">
-                    <h3>Tenacity Frameworks</h3>
-                    <p style="color: var(--muted);">Applying First-Principles to solve resource constraints without burning out.</p>
-                </div>
+            <div class="audit-box">
+                <h3>The Marrow Differentiator</h3>
+                <p style="color: var(--muted); font-size: 1rem;">We don't "develop" leaders; we <strong>train them</strong> for high-stakes maneuvers. Our protocols deliver 90%+ alignment between internal reality and board reporting within 30 days. Stealth by design. Outcome-led.</p>
             </div>
             
-
-[Image of a business health dashboard]
-
         </div>
 
         <footer>
-            Marrow Private Practice | © 2026 | Oslo
+            MARROW Private Practice | Tactical Training | © 2026
         </footer>
     </div>
 
@@ -183,12 +160,12 @@
             document.querySelectorAll('.view-btn').forEach(btn => btn.classList.remove('active'));
             document.querySelectorAll('.view-content').forEach(content => content.classList.remove('active'));
 
-            if(view === 'founder') {
-                document.querySelector('button[onclick*="founder"]').classList.add('active');
-                document.getElementById('founder-view').classList.add('active');
+            if(view === 'team') {
+                document.querySelector('button[onclick*="team"]').classList.add('active');
+                document.getElementById('team-view').classList.add('active');
             } else {
-                document.querySelector('button[onclick*="vc"]').classList.add('active');
-                document.getElementById('vc-view').classList.add('active');
+                document.querySelector('button[onclick*="partner"]').classList.add('active');
+                document.getElementById('partner-view').classList.add('active');
             }
         }
     </script>
