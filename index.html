@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Leadership Sherpa | Leadership is a Muscle Not a Title</title>
+    <title>Sherpa Leadership | Leadership is a Muscle Not a Title</title>
     
     <style>
         /* --- CSS STYLES --- */
@@ -61,7 +61,8 @@
             justify-content: space-between;
             align-items: center;
         }
-        .logo { font-weight: 900; font-size: 1.2rem; color: var(--primary-dark); text-transform: uppercase; }
+        /* Updated Logo Style */
+        .logo { font-weight: 900; font-size: 1.2rem; color: var(--primary-dark); text-transform: uppercase; letter-spacing: -0.5px; }
         .logo span { color: var(--accent-orange); }
         .nav-links a { margin-left: 20px; text-decoration: none; color: #333; font-weight: 600; }
 
@@ -73,7 +74,7 @@
             padding: 100px 20px;
         }
         .hero h1 { font-size: 3rem; margin-bottom: 20px; line-height: 1.1; }
-        /* Updated Paragraph Style */
+        /* Hero Paragraph */
         .hero p { max-width: 700px; margin: 0 auto 30px; font-size: 1.25rem; color: #ccc; }
 
         /* Pillars Grid */
@@ -149,160 +150,6 @@
 
     <nav>
         <div class="container nav-content">
-            <div class="logo">The Leadership <span>Sherpa</span></div>
+            <div class="logo">Sherpa <span>Leadership</span></div>
             <div class="nav-links">
-                <a href="#philosophy">Philosophy</a>
-                <a href="#program">Program</a>
-            </div>
-        </div>
-    </nav>
-
-    <section class="hero">
-        <div class="container">
-            <h1>Leadership is a Muscle<br>Not a Title</h1>
-            <p>Most leadership development is broken because it treats leadership as a concept to be studied rather than a skill to be trained. It’s like reading a book about rock climbing but never touching a wall.</p>
-            <a href="#program" class="btn">Start Your Ascent</a>
-        </div>
-    </section>
-
-    <section id="philosophy" class="section">
-        <div class="container">
-            <div style="text-align:center; margin-bottom: 40px;">
-                <h2>The Three Core Pillars</h2>
-            </div>
-            <div class="grid-3">
-                <div class="card">
-                    <h3>Radical Clarity in Conflict</h3>
-                    <p>We don't avoid the "climb." We help teams navigate interpersonal challenges by debating until the best solution is found.</p>
-                </div>
-                <div class="card">
-                    <h3>Applied Training</h3>
-                    <p>Specialized tools for high-stakes situations. No lectures—only real-time clarity for decision-making.</p>
-                </div>
-                <div class="card">
-                    <h3>Scalable Habit Formation</h3>
-                    <p>The "Duolingo approach" to leadership. Ensuring growth is a daily discipline, not a one-off seminar.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section cro-section">
-        <div class="container cro-container">
-            <div class="cro-text">
-                <p style="color:var(--accent-orange); font-weight:bold;">THE ROLE</p>
-                <h2 style="color:white; margin-top:0;">Become the Chief Repeating Officer</h2>
-                <p>Your job isn't to be a "broken record"—it is to be a <strong>Metronome</strong>. You provide the steady beat of strategy that prevents chaos.</p>
-            </div>
-            <div class="cro-box">
-                <h4 style="color:var(--accent-orange); margin-top:0;">The KPI</h4>
-                <p style="font-style:italic; font-size:1.1rem; margin-bottom:0;">"Success isn't when you stop repeating yourself; success is when your team starts repeating you to each other."</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="program" class="section" style="background: #f8fafc;">
-        <div class="container">
-            <div style="text-align:center; margin-bottom:20px;">
-                <h2>7 Days of Alignment & Accountability</h2>
-                <p>The Goal: Ensure every team member knows the Strategy, the Goal, and their Accountability.</p>
-            </div>
-
-            <div class="tabs-container">
-                <div class="tab-buttons">
-                    <button class="tab-btn active" onclick="openTab(event, 'day1')">Day 1</button>
-                    <button class="tab-btn" onclick="openTab(event, 'day2')">Day 2</button>
-                    <button class="tab-btn" onclick="openTab(event, 'day3')">Day 3</button>
-                    <button class="tab-btn" onclick="openTab(event, 'day4')">Day 4</button>
-                    <button class="tab-btn" onclick="openTab(event, 'day5')">Day 5</button>
-                    <button class="tab-btn" onclick="openTab(event, 'day6')">Day 6</button>
-                    <button class="tab-btn" onclick="openTab(event, 'day7')">Day 7</button>
-                </div>
-
-                <div id="day1" class="tab-content active">
-                    <span class="badge">The Strategic Echo</span>
-                    <h3>Link the "What" to the "Why"</h3>
-                    <p><strong>08:00 AM The Rep:</strong> In every meeting today, find a way to link a tactical task back to the Overall Company Strategy.</p>
-                    <hr>
-                    <p><strong>06:00 PM The Debrief:</strong> How many times did you mention the North Star today?</p>
-                </div>
-
-                <div id="day2" class="tab-content">
-                    <span class="badge">The Goal Guardrail</span>
-                    <h3>Check for Priority Drift</h3>
-                    <p><strong>08:00 AM The Rep:</strong> Ask: "On a scale of 1-10, how clear are you on the #1 priority for this week?"</p>
-                    <hr>
-                    <p><strong>06:00 PM The Debrief:</strong> Did you uncover any drift? Accountability starts with agreed-upon clarity.</p>
-                </div>
-
-                <div id="day3" class="tab-content">
-                    <span class="badge">Radical Candor</span>
-                    <h3>Address Misalignment Immediately</h3>
-                    <p><strong>08:00 AM The Rep:</strong> Identify a behavior misaligned with strategy. Say: "We agreed on Strategy X, but this action looks like Y."</p>
-                    <hr>
-                    <p><strong>06:00 PM The Debrief:</strong> Culture is defined by the worst behavior a leader is willing to tolerate.</p>
-                </div>
-
-                <div id="day4" class="tab-content">
-                    <span class="badge">The Process Metronome</span>
-                    <h3>Consistency over Intensity</h3>
-                    <p><strong>08:00 AM The Rep:</strong> Remind the team that growth is a result of boring habits done perfectly.</p>
-                    <hr>
-                    <p><strong>06:00 PM The Debrief:</strong> Did you praise the outcome or the process?</p>
-                </div>
-
-                <div id="day5" class="tab-content">
-                    <span class="badge">Accountability as Kindness</span>
-                    <h3>The Ownership Loop</h3>
-                    <p><strong>08:00 AM The Rep:</strong> Ask: "Who is the single throat to choke on this deliverable?" Ensure there is no shared responsibility.</p>
-                    <hr>
-                    <p><strong>06:00 PM The Debrief:</strong> True accountability feels like support when the goals are clear.</p>
-                </div>
-
-                <div id="day6" class="tab-content">
-                    <span class="badge">The Partner Check</span>
-                    <h3>Teach to Learn</h3>
-                    <p><strong>08:00 AM The Rep:</strong> Teach a junior leader the CRO Framework. Their job is to repeat the "Why" until the team can say it in their sleep.</p>
-                    <hr>
-                    <p><strong>06:00 PM The Debrief:</strong> By teaching the "Echo," did you find a part of your own strategy you haven't been repeating enough?</p>
-                </div>
-
-                <div id="day7" class="tab-content">
-                    <span class="badge">The Master Alignment</span>
-                    <h3>Confirm the Route</h3>
-                    <p><strong>08:00 AM The Rep:</strong> Review the "Burn" vs. "Velocity." Prepare your Repeating Script for next week.</p>
-                    <hr>
-                    <p><strong>06:00 PM The Debrief:</strong> As CRO, your final rep is confirming the route before the next week's ascent.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 The Leadership Sherpa.</p>
-        </div>
-    </footer>
-
-    <script>
-        function openTab(evt, dayId) {
-            // 1. Hide all tabs
-            var contents = document.getElementsByClassName("tab-content");
-            for (var i = 0; i < contents.length; i++) {
-                contents[i].className = contents[i].className.replace(" active", "");
-            }
-
-            // 2. Deactivate all buttons
-            var buttons = document.getElementsByClassName("tab-btn");
-            for (var i = 0; i < buttons.length; i++) {
-                buttons[i].className = buttons[i].className.replace(" active", "");
-            }
-
-            // 3. Show the selected tab and activate the button
-            document.getElementById(dayId).className += " active";
-            evt.currentTarget.className += " active";
-        }
-    </script>
-
-</body>
-</html>
+                <a href="#philosophy">
